@@ -19,4 +19,24 @@ public class DataGen {
     }
     return arr;
   }
+
+  public double[] randomProbability(int n) {
+    if (n == 0) {
+      return new double[0];
+    }
+    double[] res = new double[n];
+    double sum = 0.0;
+    for (int i = 0; i < n; i++) {
+      res[i] = random.nextDouble();
+      sum += res[i];
+    }
+    if (sum == 0) {
+      sum += 1e-9;
+      res[0] += 1e-9;
+    }
+    for (int i = 0; i < n; i++) {
+      res[i] /= sum;
+    }
+    return res;
+  }
 }

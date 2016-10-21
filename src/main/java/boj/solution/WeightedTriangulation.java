@@ -4,9 +4,7 @@
 package boj.solution;
 
 
-/*
 
- */
 public class WeightedTriangulation {
 
   Integer[][] memo;
@@ -32,17 +30,17 @@ public class WeightedTriangulation {
     return memo[i][j] = res;
   }
 
-  int solve2(int[] arr) {
+  int solve2(int[] weight) {
     // dp[i][j]: the max sum of production of weights of triangulation for arr[i...j]
-    int[][] dp = new int[arr.length][arr.length];
-    for (int n = 3; n <= arr.length; n++) {
-      for (int i = 0; i + n - 1 < arr.length; i++) {
+    int[][] dp = new int[weight.length][weight.length];
+    for (int n = 3; n <= weight.length; n++) {
+      for (int i = 0; i + n - 1 < weight.length; i++) {
         int j = i + n - 1;
         for (int k = i + 1; k < j; k++) {
-          dp[i][j] = Math.max(dp[i][j], dp[i][k] + dp[k][j] + arr[i] * arr[j] * arr[k]);
+          dp[i][j] = Math.max(dp[i][j], dp[i][k] + dp[k][j] + weight[i] * weight[j] * weight[k]);
         }
       }
     }
-    return dp[0][arr.length - 1];
+    return dp[0][weight.length - 1];
   }
 }
