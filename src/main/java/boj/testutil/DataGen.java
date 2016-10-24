@@ -20,6 +20,11 @@ public class DataGen {
     return arr;
   }
 
+  // returns random int in [from, to - 1]
+  public int randomInt(int from, int to) {
+    return random.nextInt(to - from) + from;
+  }
+
   public double[] randomProbability(int n) {
     if (n == 0) {
       return new double[0];
