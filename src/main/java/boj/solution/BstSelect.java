@@ -1,6 +1,6 @@
 package boj.solution;
 
-public class CountLessThan {
+public class BstSelect {
 
   interface TreeNode {
 
@@ -26,26 +26,27 @@ public class CountLessThan {
   }
 
   /**
-   * Returns the number of elements less than given key in the tree.
-   * Assumption: given tree is a BST. There is no duplicated elements in the tree.
+   * Given a BST, select kth smallest element in the tree.
+   * k = 0 means the smallest element in the tree.
+   * Returns null if no such element exists.
    */
-  int solve(TreeNode root, int key) {
-    int res = 0;
+  Integer solve(TreeNode root, int k) {
     while (root != null) {
-      if (key < root.getKey()) {
+      int leftSize = getSize(root.getLeft());
+      if (k == leftSize) {
+        return root.getKey();
+      } else if (k < leftSize) {
         root = root.getLeft();
-      } else if (key > root.getKey()) {
-        res += 1 + getSize(root.getLeft());
-        root = root.getRight();
       } else {
-        res += getSize(root.getLeft());
-        break;
+        k -= leftSize + 1;
+        root = root.getRight();
       }
     }
-    return res;
+    return null;
   }
 
   private int getSize(TreeNode root) {
     return root == null ? 0 : root.getSize();
   }
 }
+
