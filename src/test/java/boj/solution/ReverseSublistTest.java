@@ -90,7 +90,7 @@ public class ReverseSublistTest {
     List<Integer> origin = toList(arr);
     ReverseSublist.ListNode input = toListNode(origin);
     Collections.reverse(origin.subList(i, j));
-    assertEquals(origin, toList(solver.reverseSublist(input, i, j)));
+    assertEquals(origin, toList(solver.reverseSublist(input, i, j, Node::new)));
     Collections.reverse(origin.subList(i, j));
   }
 

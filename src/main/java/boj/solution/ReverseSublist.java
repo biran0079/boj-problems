@@ -12,7 +12,7 @@ public class ReverseSublist {
    * Reverse sublist starting from position i, inclusive, ending at position j, exclusive.
    * Assume 0 <= i < j <= list length.
    */
-  ListNode reverseSublist(ListNode head, int i, int j) {
+  ListNode reverseSublist(ListNode head, int i, int j, ListNode.Factory factory) {
     if (i == 0) {
       return reversePrefix(head, j);
     }
@@ -49,5 +49,10 @@ public class ReverseSublist {
     ListNode getNext();
 
     void setNext(ListNode next);
+
+    interface Factory {
+
+      ListNode create(int value);
+    }
   }
 }
