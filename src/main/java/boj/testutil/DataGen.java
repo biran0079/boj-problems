@@ -12,10 +12,18 @@ public class DataGen {
 
   private final Random random = new Random(0);
 
-  public int[] randomArray(int n, int bound) {
+  public int[] randomIntArray(int n, int bound) {
     int[] arr = new int[n];
     for (int i = 0; i < n; i++) {
       arr[i] = random.nextInt(bound);
+    }
+    return arr;
+  }
+
+  public double[] randomDoubleArray(int n, double from, double to) {
+    double[] arr = new double[n];
+    for (int i = 0; i < n; i++) {
+      arr[i] = random.nextDouble() * (to - from) + from;
     }
     return arr;
   }
