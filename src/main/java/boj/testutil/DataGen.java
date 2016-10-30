@@ -20,6 +20,14 @@ public class DataGen {
     return arr;
   }
 
+  public int[][] randomIntArray2(int n, int m, int bound) {
+    int[][] arr = new int[n][m];
+    for (int i = 0; i < n; i++) {
+      arr[i] = randomIntArray(m, bound);
+    }
+    return arr;
+  }
+
   public double[] randomDoubleArray(int n, double from, double to) {
     double[] arr = new double[n];
     for (int i = 0; i < n; i++) {
