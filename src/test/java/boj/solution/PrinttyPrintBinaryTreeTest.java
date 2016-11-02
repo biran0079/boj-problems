@@ -1,6 +1,8 @@
 package boj.solution;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,6 +11,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class PrinttyPrintBinaryTreeTest {
 
+  @Rule
+  public final Timeout globalTimeout = Timeout.seconds(1);
   private PrinttyPrintBinaryTree solver = new PrinttyPrintBinaryTree();
 
   @Test
