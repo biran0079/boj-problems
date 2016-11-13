@@ -1,5 +1,7 @@
 package boj.solution.catchthethief;
 
+import java.util.BitSet;
+
 /**
  * Created by biran on 11/2/16.
  */
