@@ -1,6 +1,8 @@
 package boj.solution.generatesubstring;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import java.util.Random;
 
@@ -11,6 +13,8 @@ import static org.junit.Assert.assertEquals;
  */
 class GenerateSubstringTest {
 
+  @Rule
+  public final Timeout globalTimeout = Timeout.seconds(1);
   private final Random random = new Random(0);
 
   @Test
