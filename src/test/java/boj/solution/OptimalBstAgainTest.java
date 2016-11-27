@@ -48,7 +48,6 @@ public class OptimalBstAgainTest {
         + searchDepthExpHelper(prob, root.getRight(), depth + 1);
   }
 
-
   private static final class Node implements OptimalBstAgain.TreeNode {
 
     private int value;

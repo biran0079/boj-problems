@@ -13,9 +13,13 @@ public class DataGen {
   private final Random random = new Random(0);
 
   public int[] randomIntArray(int n, int bound) {
+    return randomIntArray(n, 0, bound);
+  }
+
+  public int[] randomIntArray(int n, int from, int to) {
     int[] arr = new int[n];
     for (int i = 0; i < n; i++) {
-      arr[i] = random.nextInt(bound);
+      arr[i] = randomInt(from, to);
     }
     return arr;
   }
